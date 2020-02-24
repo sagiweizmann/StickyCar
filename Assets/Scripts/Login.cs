@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Login : MonoBehaviour
 {
@@ -30,23 +31,35 @@ public class Login : MonoBehaviour
             DBManager.coins = int.Parse(www.text.Split('\t')[1]);
        //     Debug.Log(DBManager.coins.ToString());
        //     Debug.Log("logged in");
-            Messagebox_show("Logged in Successfully!");
+            Messagebox_show("Logged in Successfully!",1);
             
         }
         else
         {
-            Messagebox_show("User login failed. Error # " + www.text);
+            Messagebox_show("User login failed. Error # " + www.text,2);
         }
     }
-    void Messagebox_show(string showstr)
+    void Messagebox_show(string showstr,int state)
     {
         msgbox.gameObject.SetActive(true);
         showtxt.text = showstr;
-        ok.onClick.AddListener(delegate () { ok_onclick(); });
+        if(state==1)
+        {
+            ok.onClick.AddListener(delegate () { ok_onclick_nextscene(); });
+        }
+        if (state == 2)
+        {
+            ok.onClick.AddListener(delegate () { ok_onclick(); });
+        }
         
     }
     void ok_onclick()
     {
         msgbox.gameObject.SetActive(false);
+    }
+    void ok_onclick_nextscene()
+    {
+        msgbox.gameObject.SetActive(false);
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
     }
 }
