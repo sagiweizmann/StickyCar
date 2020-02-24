@@ -19,8 +19,14 @@ public class CarController : MonoBehaviour {
 		movement = -Input.GetAxisRaw("Vertical") * speed;
 		rotation = Input.GetAxisRaw("Horizontal");
 	}
-
-	void FixedUpdate ()
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("coin"))
+        {
+            Destroy(other.gameObject);
+        }
+    }
+    void FixedUpdate ()
 	{
 		if (movement == 0f)
 		{
