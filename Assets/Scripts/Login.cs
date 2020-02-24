@@ -10,12 +10,12 @@ public class Login : MonoBehaviour
     public Button login;
     public Button ok;
     public Text showtxt;
-    public RawImage msgbox;
+    public Image msgbox;
     void Start()
     {
         pass_inp.inputType= InputField.InputType.Password;
         login.onClick.AddListener(delegate () { StartCoroutine(Login_Called()); });
-
+        msgbox.gameObject.SetActive(false);
     }
     IEnumerator Login_Called()
     {
@@ -28,23 +28,25 @@ public class Login : MonoBehaviour
         {
             DBManager.username = user_inp.text;
             DBManager.coins = int.Parse(www.text.Split('\t')[1]);
-            Debug.Log(DBManager.coins.ToString());
-            Debug.Log("logged in");
+       //     Debug.Log(DBManager.coins.ToString());
+       //     Debug.Log("logged in");
+            Messagebox_show("Logged in Successfully!");
             
         }
         else
         {
-            Debug.Log("User login failed. Error # " + www.text);
+            Messagebox_show("User login failed. Error # " + www.text);
         }
     }
     void Messagebox_show(string showstr)
     {
+        msgbox.gameObject.SetActive(true);
         showtxt.text = showstr;
         ok.onClick.AddListener(delegate () { ok_onclick(); });
         
     }
     void ok_onclick()
     {
-
+        msgbox.gameObject.SetActive(false);
     }
 }
