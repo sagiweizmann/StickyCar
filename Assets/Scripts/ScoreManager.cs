@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using static DBManager;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
     public TextMeshProUGUI text;
-    int score;
+    public AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +16,16 @@ public class ScoreManager : MonoBehaviour
         {
             instance = this;
         }
+        text.text = "X" + coins.ToString();
+        audio = gameObject.AddComponent<AudioSource>();
+      
     }
 
     public void ChangeScore(int coinValue)
     {
-        score += coinValue;
-        text.text = "X" + score.ToString();
+        coins += coinValue;
+        text.text = "X" + coins.ToString();
+        audio.PlayOneShot((AudioClip)Resources.Load("coin"));
     }
+   
 }

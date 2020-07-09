@@ -10,7 +10,10 @@ public class Coin : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
+                
             ScoreManager.instance.ChangeScore(coinValue);
+            AudioSource audio = gameObject.AddComponent<AudioSource>();
+            audio.PlayOneShot((AudioClip)Resources.Load("coin"));
         }
     }
 }

@@ -12,9 +12,11 @@ public class Login : MonoBehaviour
     public Button ok;
     public Text showtxt;
     public Image msgbox;
+    public Button back;
     void Start()
     {
         pass_inp.inputType= InputField.InputType.Password;
+        back.onClick.AddListener(delegate () { back_onclick(); });
         login.onClick.AddListener(delegate () { StartCoroutine(Login_Called()); });
         msgbox.gameObject.SetActive(false);
     }
@@ -23,14 +25,15 @@ public class Login : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("username", user_inp.text);
         form.AddField("password", pass_inp.text);
-        WWW www = new WWW("http://localhost/server/login.php", form);
+        WWW www = new WWW("http://147.234.32.72/server/login.php", form);
         yield return www;
         if(www.text[0]=='0')
         {
             DBManager.username = user_inp.text;
             DBManager.coins = int.Parse(www.text.Split('\t')[1]);
-       //     Debug.Log(DBManager.coins.ToString());
-       //     Debug.Log("logged in");
+            DBManager.id = int.Parse(www.text.Split('\t')[2]);
+            DBManager.currentskin = int.Parse(www.text.Split('\t')[3]);
+            Debug.Log(DBManager.currentskin);
             Messagebox_show("Logged in Successfully!",1);
             
         }
@@ -39,6 +42,7 @@ public class Login : MonoBehaviour
             Messagebox_show("User login failed. Error # " + www.text,2);
         }
     }
+
     void Messagebox_show(string showstr,int state)
     {
         msgbox.gameObject.SetActive(true);
@@ -60,6 +64,11 @@ public class Login : MonoBehaviour
     void ok_onclick_nextscene()
     {
         msgbox.gameObject.SetActive(false);
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+       // SceneManager.LoadScene("Achivements", LoadSceneMode.Additive);
+    }
+    void back_onclick()
+    {
+        SceneManager.LoadScene("Welcome", LoadSceneMode.Single);
     }
 }
