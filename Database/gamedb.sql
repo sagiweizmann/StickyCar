@@ -34,26 +34,6 @@ CREATE TABLE `accounts` (
   `currentskin` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `accounts`
---
-
-INSERT INTO `accounts` (`id`, `username`, `password`, `coins`, `currentskin`) VALUES
-(1, 'sagi', 'b35eba64c759b98148bb4510c0794583', 600, 2),
-(2, 'bens', 'b35eba64c759b98148bb4510c0794583', 55, 2),
-(3, 'test', '25d55ad283aa400af464c76d713c07ad', 0, 0),
-(4, 'test2', '25d55ad283aa400af464c76d713c07ad', 0, 0),
-(5, 'test3', '25d55ad283aa400af464c76d713c07ad', 0, 0),
-(6, 'test5', '25d55ad283aa400af464c76d713c07ad', 0, 0),
-(7, 'test6', '25d55ad283aa400af464c76d713c07ad', 0, 0),
-(8, 'test8', '25d55ad283aa400af464c76d713c07ad', 0, 0),
-(9, 'test10', '25d55ad283aa400af464c76d713c07ad', 0, 0),
-(10, 'test100', '25f9e794323b453885f5181f1b624d0b', 0, 0),
-(11, 'test102', '25d55ad283aa400af464c76d713c07ad', 0, 0),
-(181, 'bensop', '25d55ad283aa400af464c76d713c07ad', 31, 0),
-(182, 'sopher', '25d55ad283aa400af464c76d713c07ad', 52, 0),
-(183, 'must$', 'b35eba64c759b98148bb4510c0794583', 0, 0);
-
 -- --------------------------------------------------------
 
 --
