@@ -18,5 +18,5 @@ Sticky Car Includes:
 ●	In game sound effect(including background music)//new features.\
 
 # Youtube Video
-[![StickyCar](https://yt-embed.herokuapp.com/embed?v=tZ9LnY5Wp6M)](https://www.youtube.com/watch?v=tZ9LnY5Wp6M "StickyCar")
+[![StickyCar](https://i.imgur.com/BHLRd9m.png)](https://www.youtube.com/watch?v=tZ9LnY5Wp6M "StickyCar")
 
