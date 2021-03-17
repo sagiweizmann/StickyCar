@@ -1,7 +1,7 @@
 <?php
 // Send variables for the MySQL database class.
 //Change User,PW and yourDBname
-$con = mysqli_connect('localhost','phpmyadmin','77021002','gamedb') or die('Could not connect: ' . mysqli_error());
+$con = mysqli_connect('HOST','USERNAME','PASSWORD','DBNAME') or die('Could not connect: ' . mysqli_error());
 
 $query = "SELECT * FROM `accounts` ORDER by `coins` DESC LIMIT 10";
 $result = mysqli_query($con,$query) or die('Query failed: ' . mysqli_error());
