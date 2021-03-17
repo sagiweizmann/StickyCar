@@ -17,6 +17,12 @@ Sticky Car Includes:
 ●	Game settings(sound effect toggle).\
 ●	In game sound effect(including background music)//new features.\
 
+# Store Link
+Click to download the game to your android device :)
+[![Download Now](https://cdn-mobile.aptoide.com/static/imgs/aptoide-logo.svg)](https://stickycar.en.aptoide.com/?store_name=stickycar&app_id=56727545 "Download Now")
+
+
+
 # Youtube Video
 [![StickyCar](https://i.imgur.com/BHLRd9m.png)](https://www.youtube.com/watch?v=tZ9LnY5Wp6M "StickyCar")
 
