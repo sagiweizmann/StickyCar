@@ -24,5 +24,5 @@ Click on the link below to download the game to your Android device :)\
 
 
 # Youtube Video
-[![StickyCar](https://i.imgur.com/BHLRd9m.png)](https://www.youtube.com/watch?v=tZ9LnY5Wp6M "StickyCar")
+[![StickyCar](https://i.imgur.com/BHLRd9m.png)](https://www.youtube.com/watch?v=IewCNloCyik "StickyCar")
 
