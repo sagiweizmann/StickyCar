@@ -5,7 +5,7 @@
 Sticky Car is a totally independent system that is based on a self-made game from GitHub called: “Balance Racing Game” by Brackeys and it’s actually an extension to that game. This program has only one type of user (the gamers themselves).
 # Product Functions
 
-Sticky Car Includes:
+Sticky Car Includes:\
 ●	Create a user account.\
 ●	Login system.\
 ●	Game Interface(Main Menu, Shop, Settings, etc…)\
